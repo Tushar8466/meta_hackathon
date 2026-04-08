@@ -5,6 +5,17 @@ from openai import OpenAI
 from dataset import CropDataset
 from models import get_model
 
+
+from huggingface_hub import snapshot_download
+
+# Download dataset from HF if not present
+if not os.path.exists("dataset"):
+    snapshot_download(
+        repo_id="YOUR_HF_USERNAME/YOUR_DATASET_NAME",
+        repo_type="dataset",
+        local_dir="dataset"
+    )
+
 app = Flask(__name__)
 
 # ================================
