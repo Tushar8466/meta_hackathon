@@ -1,0 +1,20 @@
+name: crop-disease-env
+description: RL environment for crop disease detection
+
+observation_space:
+  type: image
+  shape: [224, 224, 3]
+
+action_space:
+  type: discrete
+  n: 15
+
+reward_range: [-1, 1]
+
+tasks:
+  - name: easy
+    description: small dataset
+  - name: medium
+    description: moderate dataset
+  - name: hard
+    description: full dataset
